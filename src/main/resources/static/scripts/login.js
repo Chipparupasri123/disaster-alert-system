@@ -11,7 +11,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     }
 
     try {
-        const res = await fetch(`/api/auth/login`, {
+        const res = await fetch(`https://disaster-alert-system-7tx4.onrender.com/api/auth/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password })
