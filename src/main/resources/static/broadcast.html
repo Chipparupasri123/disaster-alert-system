@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Broadcast Alerts</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Broadcast Page CSS -->
+    <link rel="stylesheet" href="/broadcast.css">
+</head>
+
+<body class="dashboard-body">
+
+<script>
+    // Admin protection
+    if (sessionStorage.getItem("isAdmin") !== "true") {
+        alert("Only admins can access this page!");
+        window.location.href = "/dashboard.html";
+    }
+</script>
+
+<header class="dashboard-header broadcast-header">
+    🚨 Broadcast Alerts
+</header>
+
+
+<div class="broadcast-container">
+
+    <h2 class="section-title">Send New Alert</h2>
+
+    <div class="broadcast-form">
+        <label>Alert Title</label>
+        <input type="text" id="title" placeholder="Name of the alert">
+
+        <label>Description</label>
+        <textarea id="description" placeholder="Describe about the disaster."></textarea>
+
+        <label>Location</label>
+        <input type="text" id="location" placeholder="name of the location">
+
+        <button onclick="broadcastAlert()">📢 Broadcast Alert</button>
+        <p class="success-msg" id="message"></p>
+    </div>
+
+    <div class="alert-history">
+        <h2 class="section-title">📜 Previously Broadcasted Alerts</h2>
+        <div id="alertsList"></div>
+    </div>
+
+</div>
+
+<script src="/scripts/broadcast.js"></script>
+
+</body>
+</html>

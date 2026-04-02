@@ -1,0 +1,114 @@
+/* ===== PAGE ===== */
+body.dashboard-body {
+    min-height: 100vh;
+    background: #f2f6fc;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* ===== HEADER FIX ===== */
+.broadcast-header {
+    margin-top: 5px;        /* move up */
+    margin-bottom: 10px;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.broadcast-container {
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: white;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== FORM FULL WIDTH ===== */
+.broadcast-form {
+    width: 100%;            /* 🔥 FIX */
+    max-width: 100%;        /* 🔥 FIX */
+}
+
+/* ===== SECTION TITLE ===== */
+.section-title {
+    text-align: left;
+    color: #c0392b;
+    margin-bottom: 15px;
+}
+
+/* ===== FORM ELEMENTS FULL ROW ===== */
+.broadcast-form label {
+    display: block;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.broadcast-form input,
+.broadcast-form textarea {
+    width: 100%;            /* 🔥 FIX */
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.broadcast-form textarea {
+    height: 110px;
+    resize: none;
+}
+
+/* ===== BUTTON FULL ROW ===== */
+.broadcast-form button {
+    margin-top: 20px;
+    width: 100%;            /* 🔥 FIX */
+    padding: 14px;
+    background: #e74c3c;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.broadcast-form button:hover {
+    background: #c0392b;
+}
+
+/* ===== SUCCESS MESSAGE ===== */
+.success-msg {
+    text-align: center;
+    margin-top: 12px;
+    color: green;
+    font-weight: 600;
+}
+
+/* ===== ALERT HISTORY (SCROLLABLE ONLY HERE) ===== */
+.alert-history {
+    flex: 1;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    overflow-y: auto;
+}
+
+/* ===== ALERT CARD ===== */
+.alert-card {
+    background: #f8f9fa;
+    border-left: 6px solid #e74c3c;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.alert-card h4 {
+    margin: 0;
+    color: #c0392b;
+}
+
+.alert-meta {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 6px;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D Disaster Gallery</title>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Gallery CSS -->
+    <link rel="stylesheet" href="/gallery.css">
+</head>
+
+<body>
+
+<div class="gallery-page">
+
+    <h1 class="gallery-heading">🌍 Disaster 3D Gallery</h1>
+    <p class="gallery-sub">Swipe or click to explore disasters</p>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide"
+                 onclick="openModal('Flood','Floods occur due to heavy rainfall and river overflow. They damage homes, crops, and infrastructure. Early warnings and evacuation help reduce losses.','/images/floods.jpg')">
+                <img src="/images/floods.jpg">
+            </div>
+
+            <div class="swiper-slide"
+                 onclick="openModal('Earthquake','Earthquakes occur due to tectonic plate movements. They cause ground shaking and structural damage. Earthquake-resistant buildings save lives.','/images/earthquake.jpg')">
+                <img src="/images/earthquake.jpg">
+            </div>
+
+            <div class="swiper-slide"
+                 onclick="openModal('Cyclone','Cyclones bring strong winds and heavy rain. Coastal regions are most affected. Early alerts and shelters reduce casualties.','/images/cyclone.jpg')">
+                <img src="/images/cyclone.jpg">
+            </div>
+
+            <div class="swiper-slide"
+                 onclick="openModal('Wildfire','Wildfires spread rapidly in dry conditions. They destroy forests and homes. Early detection helps control damage.','/images/wildfire.jpg')">
+                <img src="/images/wildfire.jpg">
+            </div>
+
+            <div class="swiper-slide"
+                 onclick="openModal('Volcanic Eruption','Volcanic eruptions release lava and ash. They destroy nearby settlements and affect climate. Monitoring systems reduce risk.','/images/volcanic eruption.jpg')">
+                <img src="/images/volcanic eruption.jpg">
+            </div>
+
+        </div>
+
+        <!-- Dots MUST be inside swiper -->
+        <div class="swiper-pagination"></div>
+
+        <!-- Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+</div>
+
+<!-- Modal -->
+<div id="galleryModal" class="modal">
+    <span class="close" onclick="closeModal()">×</span>
+    <img id="modalImg">
+    <h2 id="modalTitle"></h2>
+    <p id="modalDesc"></p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    const swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    centeredSlides: true,
+    slidesPerView: "auto",
+    grabCursor: true,
+    loop: false,
+
+    coverflowEffect: {
+        rotate: 30,
+        depth: 300,
+        modifier: 1.2,
+        slideShadows: true,
+    },
+
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+
+    on: {
+        init: function () {
+            document.querySelector(".swiper").style.opacity = "1";
+            document.querySelector(".swiper").style.visibility = "visible";
+        }
+    }
+});
+
+
+
+    function openModal(title, desc, img) {
+        document.getElementById("modalTitle").innerText = title;
+        document.getElementById("modalDesc").innerText = desc;
+        document.getElementById("modalImg").src = img;
+        document.getElementById("galleryModal").style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById("galleryModal").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

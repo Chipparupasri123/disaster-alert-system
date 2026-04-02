@@ -1,0 +1,135 @@
+/* ===== PAGE CONTAINER ===== */
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #dcfce7, #fee2e2);
+    font-family: "Segoe UI", sans-serif;
+    color: #181718;
+}
+
+/* Main wrapper */
+.gallery-page {
+    height: 100vh;
+    overflow: hidden; /* no scroll */
+}
+
+/* ===== HEADINGS ===== */
+.gallery-heading {
+    text-align: center;
+    font-size: 44px;
+    margin: 20px 0 5px;
+}
+
+.gallery-sub {
+    text-align: center;
+    opacity: 0.8;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+/* ===== SWIPER CONTAINER ===== */
+.swiper {
+    width: 100%;
+    height: calc(100vh - 130px);
+    padding-bottom: 60px; /* space for dots */
+    position: relative;
+}
+/* Hide swiper until JS loads */
+.swiper {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease;
+}
+
+/* ===== MOVE IMAGES DOWN ===== */
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;   /* 🔽 images moved DOWN */
+}
+
+/* ===== SLIDES ===== */
+.swiper-slide {
+    width: 420px;
+    height: 560px;
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+    cursor: pointer;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== MOVE ARROWS UP ===== */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #000000;
+    top: 42%;              /* 🔼 arrows moved UP */
+}
+
+/* Bigger arrow icons (optional but nice) */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* ===== PAGINATION DOTS ===== */
+.swiper-pagination {
+    bottom: 20px;
+}
+
+.swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+    background: #374151;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: #dc2626;
+}
+
+/* ===== MODAL ===== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.95);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.modal img {
+    max-width: 75%;
+    max-height: 55%;
+    border-radius: 16px;
+}
+
+.modal h2 {
+    margin-top: 20px;
+    font-size: 32px;
+}
+
+.modal p {
+    max-width: 800px;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    font-size: 40px;
+    cursor: pointer;
+}

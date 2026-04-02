@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Responder – Help Requests</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="dashboard-body">
+
+<script>
+    if (sessionStorage.getItem("role") !== "RESPONDER") {
+        window.location.href = "/dashboard.html";
+    }
+</script>
+
+<header class="dashboard-header">
+    🚑 Responder Dashboard
+</header>
+
+<div class="responder-page">
+
+    <!-- PENDING -->
+    <div class="requests-column pending-column">
+        <h2>🆘 Pending Requests</h2>
+        <div id="pendingRequests" class="requests-list"></div>
+    </div>
+
+    <!-- ACKNOWLEDGED -->
+    <div class="requests-column acknowledged-column">
+        <h2>✔ Acknowledged</h2>
+        <div id="acknowledgedRequests" class="requests-list"></div>
+    </div>
+
+</div>
+
+<script src="/scripts/responder.js"></script>
+</body>
+</html>

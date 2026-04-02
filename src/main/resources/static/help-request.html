@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Need Help</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="dashboard-body">
+
+<script>
+    if (sessionStorage.getItem("role") !== "CITIZEN") {
+        window.location.href = "/dashboard.html";
+    }
+</script>
+
+<div class="help-page-full">
+    <h1 class="help-title">🆘 NEED HELP?</h1>
+
+    <p class="help-desc">
+        If you are in danger or facing an emergency, please describe the situation below.
+        Our responders will reach you as soon as possible.
+    </p>
+
+    <div class="help-form-full">
+        <label>🌪 Disaster Name</label>
+        <input type="text" id="disaster" placeholder="Flood / Earthquake / Cyclone">
+
+        <label>📝 Describe the Issue</label>
+        <textarea id="issue" placeholder="Explain your problem in detail..."></textarea>
+        <label>📍 Your Location</label>
+        <input type="text" id="location" placeholder="Area / City / Landmark">
+
+
+        <button onclick="sendHelp()">🚨 SEND HELP REQUEST</button>
+    </div>
+</div>
+
+<script src="/scripts/help-request.js"></script>
+</body>
+
+
+</html>

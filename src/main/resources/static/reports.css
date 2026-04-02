@@ -1,0 +1,76 @@
+/* ===== RESET ===== */
+body {
+    margin: 0;
+    padding: 0;
+    background: #0f172a;
+    font-family: "Segoe UI", sans-serif;
+    color: white;
+    height: 100vh;
+    overflow: hidden;   /* 🔥 NO SCROLL */
+}
+
+/* ===== MAIN CONTAINER ===== */
+.reports-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* ===== HEADER ===== */
+.reports-header {
+    text-align: center;
+    margin-bottom: 10px;
+    flex-shrink: 0;   /* 🔥 important – prevents pushing content down */
+}
+
+
+.reports-header h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #38bdf8;
+}
+
+.reports-header p {
+    margin: 2px 0 0;
+    color: #cbd5e1;
+}
+
+/* ===== CHART ROW ===== */
+.charts-row {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    height: calc(100vh - 90px);  /* 🔥 this fixes going down */
+}
+
+/* ===== CARD ===== */
+.chart-card {
+    flex: 1;
+    background: #020617;
+    border-radius: 16px;
+    padding: 15px;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;   /* 🔥 prevents internal scroll */
+}
+
+
+.chart-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 35px rgba(56, 189, 248, 0.35);
+}
+
+.chart-card h3 {
+    margin-bottom: 5px;
+    color: #38bdf8;
+    font-size: 20px;
+}
+.chart-card canvas {
+    width: 100% !important;
+    height: 800px !important; /* ensures chart fits inside card */
+}

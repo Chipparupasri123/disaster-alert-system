@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Risk Assessment & Notifications</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="reports.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="reports-container">
+
+    <div class="reports-header">
+        <h1>📊 Risk Assessment & Notifications</h1>
+        <p>Admin Dashboard – Zone Risk & Citizen Response Analysis</p>
+    </div>
+
+    <div class="charts-row">
+
+        <!-- Zone Risk Chart -->
+        <div class="chart-card">
+            <h3>🌍 Zone-wise Disaster Risk</h3>
+            <canvas id="zoneChart" width="400" height="300"></canvas>
+        </div>
+
+        <!-- Alert Engagement Chart -->
+        <div class="chart-card">
+            <h3>🔔 Alert Engagement (Acknowledged vs Pending)</h3>
+            <canvas id="engagementChart" width="300" height="300"></canvas>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/scripts/reports.js"></script>
+</body>

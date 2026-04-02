@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/profile.css">
+</head>
+
+<body class="dashboard-body">
+
+<header class="dashboard-header">👤 My Profile</header>
+
+<!-- ============== VIEW PROFILE ============== -->
+<div class="profile-container" id="viewProfile">
+    <div class="profile-card wide">
+
+        <!-- LEFT -->
+        <div class="left">
+
+            <img id="profilePic"
+                 class="profile-pic"
+                 title="Click to view full image"
+                 onclick="openProfileImage()">
+
+            <div class="info-row">👤 <b>Name:</b> <span id="v_name"></span></div>
+            <div class="info-row">📧 <b>Email:</b> <span id="v_email"></span></div>
+            <div class="info-row">📞 <b>Phone:</b> <span id="v_phone"></span></div>
+            <div class="info-row">💼 <b>Role:</b> <span id="v_role"></span></div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right">
+
+            <div class="info-row">🎂 <b>DOB:</b> <span id="v_dob"></span></div>
+            <div class="info-row">📍 <b>Location:</b> <span id="v_location"></span></div>
+            <div class="info-row">🩸 <b>Blood:</b> <span id="v_blood"></span></div>
+            <div class="info-row">🛠️ <b>Skills:</b> <span id="v_skills"></span></div>
+
+            <button class="edit-btn" onclick="openEdit()">✏️ Edit Profile</button>
+            <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+
+        </div>
+    </div>
+</div>
+
+<!-- ============== EDIT PROFILE ============== -->
+<div class="profile-container hide" id="editProfile">
+    <div class="profile-card wide">
+
+        <!-- LEFT -->
+        <div class="left">
+
+            <label for="profileImageInput">
+                <img id="editProfilePic" class="profile-pic">
+            </label>
+
+            <input type="file" id="profileImageInput" accept="image/*" style="display:none">
+
+            <div class="form-row">👤 Name <input id="name" disabled></div>
+            <div class="form-row">📧 Email <input id="email" disabled></div>
+            <div class="form-row">💼 Role <input id="role" disabled></div>
+            <div class="form-row">📞 Phone <input id="phone"></div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right">
+
+            <div class="form-row">🎂 DOB <input type="date" id="dob"></div>
+            <div class="form-row">📍 Location <input id="userLocation"></div>
+            <div class="form-row">🩸 Blood <input id="blood"></div>
+            <div class="form-row">🛠️ Skills <input id="skills"></div>
+
+            <button class="edit-btn" onclick="saveProfile()">💾 Save</button>
+            <button class="cancel-btn" onclick="cancelEdit()">❌ Cancel</button>
+            <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+
+        </div>
+    </div>
+</div>
+
+<script src="/scripts/profile.js"></script>
+
+</body>
+</html>

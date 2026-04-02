@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Menu Button -->
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <a href="#" onclick="toggleDashboardMenu()">📊 Dashboard ▾</a>
+        <div id="dashboardSubmenu" class="submenu"></div>
+
+        <a href="#" onclick="openAlerts()">🚨 Alerts</a>
+        <a href="reports.html" id="reportsMenu">📊 Reports</a>
+        <a href="/gallery.html">🖼️ Gallery</a>
+        <a href="/profile.html">👤 Profile</a>
+        
+
+
+        <!-- Dark Mode Toggle -->
+        <div class="theme-toggle">
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+                <span class="slider"></span>
+            </label>
+            <span class="toggle-text">🌙 Dark Mode</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="dashboard-header">
+        🌐 Disaster Monitoring
+    </header>
+
+    <!-- Search Box -->
+    <div class="search-box">
+        <input type="text" id="locationInput" placeholder="Search location..." onkeyup="searchLocation()">
+        <span class="clear-btn" id="clearBtn">&times;</span>
+        <ul id="suggestions"></ul>
+    </div>
+
+    <!-- Filters Row -->
+    <div class="filters-row">
+        <select id="type">
+            <option disabled selected>Disaster Type</option>
+            <option>Flood</option>
+            <option>Earthquake</option>
+            <option>Cyclone</option>
+        </select>
+
+        <select id="severity">
+            <option disabled selected>Severity</option>
+            <option>Low</option>
+            <option>Moderate</option>
+            <option>High</option>
+        </select>
+
+        <select id="location">
+            <option disabled selected>Location</option>
+            <option>Telangana</option>
+            <option>Karnataka</option>
+            <option>Tamil Nadu</option>
+        </select>
+    </div>
+
+    <!-- Main Content -->
+    <div class="dashboard-content">
+
+        <!-- Left Panel: Alerts -->
+        <div class="alerts-panel">
+            <h3>Live Alerts</h3>
+
+            <!-- ✅ Filter Message (Map + Message together) -->
+            <div id="filterMsg" class="filter-msg"></div>
+
+            <div id="alertsList"></div>
+
+            <h3>Safety / Prevention Tips</h3>
+            <ul id="tipsList"></ul>
+        </div>
+
+        <!-- Right Panel: Map -->
+        <div class="map-panel">
+            <div id="map"></div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="/scripts/api.js"></script>
+    <script src="/scripts/dashboard.js"></script>
+
+</body>
+</html>

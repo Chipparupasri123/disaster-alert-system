@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="form-body">
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <div class="form-container">
+        <h1>Login</h1>
+
+        <form id="loginForm">
+            <label>Email</label>
+            <input type="email" id="email" required>
+
+            <label>Password</label>
+            <input type="password" id="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <p id="msg"></p>
+        <p>Don’t have an account? <a href="/signup.html">Signup</a></p>
+    </div>
+
+    
+    <script src="/scripts/api.js"></script>
+    <script src="/scripts/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="/scripts/particles-config.js"></script>
+
+
+</body>
+</html>

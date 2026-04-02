@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rescue Operations</title>
+    <link rel="stylesheet" href="rescue-operations.css">
+</head>
+
+<body>
+
+<h2>🚑 Rescue Operations</h2>
+
+<!-- ================= ADMIN SECTION ================= -->
+<div id="adminSection">
+
+    <h3>Assign Rescue Task</h3>
+
+    <select id="zone">
+      <option value="" disabled selected hidden>Select Zone</option>
+      <option value="Mountain">Mountain</option>
+      <option value="Urban">Urban</option>
+      <option value="Coastal">Coastal</option>
+      <option value="Rural">Rural</option>
+    </select>
+
+
+    <select id="responderType">
+       <option value="" disabled selected hidden>Select Responder Type</option>
+       <option value="Medical">Medical</option>
+       <option value="Fire">Fire</option>
+       <option value="Police">Police</option>
+   </select>
+
+
+    <textarea id="desc" placeholder="Task description"></textarea>
+
+    <button onclick="assignTask()">Assign Task</button>
+
+    <h3 class="section-title">Previously Assigned Tasks</h3>
+
+    <!-- 🔥 ONLY THIS AREA SCROLLS -->
+    <div id="tasksContainer">
+        <div id="tasksList"></div>
+    </div>
+
+</div>
+
+<!-- ================= RESPONDER SECTION ================= -->
+<div id="responderSection">
+
+    <h3>Assigned Tasks</h3>
+
+    <!-- RESPONDER TASKS -->
+    <div id="responderTasks"></div>
+
+</div>
+
+<script src="scripts/rescue-operations.js"></script>
+</body>
+</html>
